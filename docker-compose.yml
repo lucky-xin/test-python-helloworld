@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  python-helloworld:
+    container_name: python-helloworld
+    environment:
+      - PIP_INDEX_URL=http://172.29.35.103:8081/repository/python-group/simple
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./files:/pyc/files
+    restart: unless-stopped
+    # 交互式运行
+    stdin_open: true
+    tty: true
+    user: "1000:1000"
+    working_dir: /pyc
+    ports:
+      - 5000:5000

@@ -1,0 +1,36 @@
+# Ruff configuration file
+# See: https://docs.astral.sh/ruff/configuration/
+
+# Target Python version
+target-version = "py312"
+
+# Line length
+line-length = 88
+
+# Linting rules
+[lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+]
+
+# Import sorting
+[lint.isort]
+known-first-party = ["test_python_helloworld"]
+force-sort-within-sections = true
+combine-as-imports = true
+
+# Formatting
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false 

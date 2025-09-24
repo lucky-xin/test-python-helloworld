@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# PyBuilder
+target/
+
+# logs
+logs/
+
+# Extra
+.DS_Store
+.vscode
+.venv
+.idea
+.conf
+projects/
+logs/runtime.log
+.ruff_cache/
